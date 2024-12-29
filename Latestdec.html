@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints Table with Downloads</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #dff0d8; /* Light green */
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    td a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #4caf50;
+    }
+
+    .search-bar {
+      width: 80%;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>Complaints with Download Links</h1>
+  <input type="text" id="search-bar" class="search-bar" placeholder="Search by complaint ID or year..." onkeyup="filterComplaints()">
+  <table>
+    <thead>
+      <tr>
+        <th>Complaint No</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="complaints-table">
+      <!-- Dynamic rows will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    const complaints = [
+      { no: '0686/Infrml/2024 to 0735/Infrml/2024', url: 'https://fto.gov.pk/assets/decisions/0686_infrml_2024.pdf' },
+      { no: '0024/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0024_om_2024.pdf' },
+      { no: '6027/KHI/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/6027_2024.pdf' },
+      { no: '0023/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0023_om_2024.pdf' },
+      { no: '7274/ISB/ST/2024', url: 'https://fto.gov.pk/assets/decisions/7274_2024.pdf' },
+      { no: '2800/KHI/ST/2024', url: 'https://fto.gov.pk/assets/decisions/2800_2024.pdf' },
+      { no: '0025/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0025_om_2024.pdf' },
+      { no: '5779/ISB/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/5779_2024_findings.pdf' },
+      { no: '0012/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0012_om_2024.pdf' },
+      { no: '4428 TO 4491, 4493 TO 4517, 4519 TO 4544 & 4547 TO 4555/LHR/IT/2024', url: 'https://fto.gov.pk/assets/decisions/4428_2024.pdf' },
+      { no: '0007/OM/2024', url: 'https://example.com/0007' },
+      { no: '5072/ISB/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/5072_2024.pdf' },
+      { no: '0009/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0009_om_2024.pdf' },
+      { no: '0021/OM/2022', url: 'https://fto.gov.pk/assets/decisions/0021_om_2024.pdf' },
+      { no: '3805/ISB/IT/2024', url: 'https://fto.gov.pk/assets/decisions/3805_2024.pdf' },
+      { no: '1751/LHR/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/1751_2024.pdf' },
+      { no: '0060/OM/2022', url: 'https://fto.gov.pk/assets/decisions/0060_om_2022.pdf' },
+      { no: '0002/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0002_om_2024.pdf' },
+      { no: '2749/FSD/IT/2024', url: 'https://fto.gov.pk/assets/decisions/2749_2024.pdf' },
+      { no: '0051/OM/2022', url: 'https://fto.gov.pk/assets/decisions/0051_om_2022.pdf' },
+      { no: '2671/MLN/IT/2024', url: 'https://fto.gov.pk/assets/decisions/2671_2024.pdf' },
+      { no: '0020/OM/2022', url: 'https://fto.gov.pk/assets/decisions/20_om_2022.pdf' },
+      { no: '1075/LHR/IT/2024', url: 'https://fto.gov.pk/assets/decisions/1075_2024.pdf' },
+      { no: '2794/FSD/IT/2024', url: 'https://fto.gov.pk/assets/decisions/2794_2024.pdf' },
+      { no: '0001/OM/2024', url: 'https://fto.gov.pk/assets/decisions/0001_om_2024.pdf' },
+      { no: '0875/LHR/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/0875_2024.pdf' },
+      { no: '3076, 3254, 3255, 3084 & 3085/ISB/ST/2024', url: 'https://fto.gov.pk/assets/decisions/3076_2024.pdf' },
+      { no: '1926/MLN/IT/2024', url: 'https://fto.gov.pk/assets/decisions/1926_2024.pdf' },
+      { no: '1874/ISB/Cust/2023', url: 'https://fto.gov.pk/assets/decisions/1874_2023.pdf' },
+      { no: '2630/KHI/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/2296_2024.pdf' },
+      { no: '2328 to 2482/LHR/IT/2024', url: 'https://fto.gov.pk/assets/decisions/2328_2024.pdf' },
+      { no: '2296/SGD/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/2296_2024.pdf' },
+      { no: '1673 to 2025/GWL/IT/2024', url: 'https://fto.gov.pk/assets/decisions/1673_2024.pdf' },
+      { no: '0128/KHI/ST/2024', url: 'https://fto.gov.pk/assets/decisions/0128_2024.pdf' },
+      { no: '0642/ISB/Cust/2024', url: 'https://fto.gov.pk/assets/decisions/0642_2024.pdf' },
+      { no: '0636/GWL/ST/2024', url: 'https://fto.gov.pk/assets/decisions/0636_2024.pdf' },
+      { no: '0033 to 0063/Ref/POP/2024', url: 'https://fto.gov.pk/assets/decisions/0033_ref_2024.pdf' },
+      { no: '0085/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0085_om_2023.pdf' },
+      { no: '0010/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0010_om_2023.pdf' },
+      { no: '0148/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0148_om_2023.pdf' },
+      { no: '0133/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0133_om_2023.pdf' },
+      { no: '0134/Ref/POP/2024', url: 'https://fto.gov.pk/assets/decisions/0134_ref_2024.pdf' },
+      { no: '3019/LHR/IT/2023', url: 'https://fto.gov.pk/assets/decisions/3019_2023.pdf' },
+      { no: '3014/LHR/IT/2023', url: 'https://fto.gov.pk/assets/decisions/3014_2023.pdf' },
+      { no: '7314, 7315 & 7317/KHI/CUST/2023', url: 'https://fto.gov.pk/assets/decisions/7314_2023.pdf' },
+      { no: '0144/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0144_om_2023.pdf' },
+      { no: '0083, 0099/OM/2023', url: 'https://fto.gov.pk/assets/decisions/0083_om_2023.pdf' }
+    ];
+
+    const populateComplaintsTable = () => {
+      const tableBody = document.getElementById('complaints-table');
+      complaints.forEach(complaint => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${complaint.no}</td>
+          <td><a href="${complaint.url}" target="_blank">Download</a></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    };
+
+    const filterComplaints = () => {
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const filteredComplaints = complaints.filter(complaint => {
+        return complaint.no.toLowerCase().includes(searchTerm);
+      });
+      updateComplaintsTable(filteredComplaints);
+    };
+
+    const updateComplaintsTable = (complaintsList) => {
+      const tableBody = document.getElementById('complaints-table');
+      tableBody.innerHTML = ''; // Clear existing rows
+      complaintsList.forEach(complaint => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${complaint.no}</td>
+          <td><a href="${complaint.url}" target="_blank">Download</a></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    };
+
+    window.onload = populateComplaintsTable;
+  </script>
+</body>
+</html>

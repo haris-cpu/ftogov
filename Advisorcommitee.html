@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisor Committee</title>
+    <style>
+        /* General Reset */
+        body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #f8f9fa, #e9ecef);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 10px 0;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 2px solid transparent;
+            border-radius: 10px;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            background-color: #f0f8ff;
+            border: 2px solid #007bff;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+
+        .section a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section a:hover {
+            background: #0056b3;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Add smooth animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advisor Committee</h1>
+        
+        <div class="section" id="central">
+            <h2>Central</h2>
+            <a href="https://fto.gov.pk/assets/ftostaff/AdvisoryCommitteeCentral.pdf" target="_blank">View Central Committee</a>
+        </div>
+        
+        <div class="section" id="headquarter">
+            <h2>Headquarter</h2>
+            <a href="https://fto.gov.pk/assets/ftostaff/AdvisoryCommitteeCentral.pdf" target="_blank">View Headquarter Committee</a>
+        </div>
+        
+        <div class="section" id="south">
+            <h2>South</h2>
+            <a href="https://fto.gov.pk/assets/ftostaff/AdvisoryCommitteeCentral.pdf" target="_blank">View South Committee</a>
+        </div>
+
+        <div class="footer">© 2024 Advisor Committee</div>
+    </div>
+
+    <script>
+        // Add smooth scroll to sections when clicked
+        const sections = document.querySelectorAll('.section');
+
+        sections.forEach((section) => {
+            section.addEventListener('click', (e) => {
+                e.target.classList.add('clicked');
+                setTimeout(() => {
+                    e.target.classList.remove('clicked');
+                }, 300);
+            });
+        });
+
+        // Add random background colors when hovered over sections
+        sections.forEach((section) => {
+            section.addEventListener('mouseover', () => {
+                const colors = ['#FFB6C1', '#87CEFA', '#FFD700', '#90EE90', '#FF69B4'];
+                section.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+            });
+            section.addEventListener('mouseout', () => {
+                section.style.backgroundColor = '#f0f8ff';
+            });
+        });
+    </script>
+</body>
+</html>

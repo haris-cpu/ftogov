@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Table</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            position: relative;
+            overflow: hidden; /* Prevent content from overflowing */
+        }
+
+        /* Add the background image and blur effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 150%;
+            background: url('fto logo.jpg') ;
+            background-size: cover;
+            filter: blur(2px);
+            z-index: -1; 
+            margin-left: 230px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .download-table thead tr {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .download-table th,
+        .download-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .download-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .download-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="title">DOWNLOAD</h3>
+        <table class="download-table">
+            <thead>
+                <tr>
+                    <th>S #</th>
+                    <th>Details</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><b>Establishment of the Office of FTO Ordinance, 2000</b> <br>(FTO Ordinance)</td>
+                    <td><a href="https://fto.gov.pk/assets/img/fto_Ordinance_2000-_4th_draft_a.pdf" class="download-link" target="_blank">DOWNLOAD</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><b>Federal Ombudsmen Institutional Reforms Act, 2013</b> <br>(FOIRA, 2013)</td>
+                    <td><a href="https://fto.gov.pk/assets/img/FOInstitutionalReformsAct2013.pdf" class="download-link" target="_blank">DOWNLOAD</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><b>FTO Investigation & Disposal of Complaints Regulations, 2001</b></td>
+                    <td><a href="https://fto.gov.pk/assets/img/Regulations2001.pdf" class="download-link" target="_blank">DOWNLOAD</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><b>Federal Tax Ombudsmen Office Staff Service Rules, 2006</b></td>
+                    <td><a href="https://fto.gov.pk/assets/img/FTO_Staff_Services_Rules_2006.pdf" class="download-link" target="_blank">DOWNLOAD</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Initiatives & Reports</title>
+    <style>
+        /* CSS styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #004C97;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header a {
+            font-size: 36px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header a:hover {
+            color: #00b0ff;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 30%;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #004C97;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #006bb3;
+        }
+
+        .more-info {
+            display: none;
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .report-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .report {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .report h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .report p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .report a {
+            color: #004C97;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .report a:hover {
+            color: #006bb3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#">Special Initiatives & Reports</a>
+        </div>
+    </header>
+
+    <section id="special-initiatives">
+        <div class="container">
+            <h2>Special Initiatives</h2>
+            <div class="card-wrapper">
+                <!-- FTO Initiative 1 -->
+                <div class="card">
+                    <img src="images/pic209.png" alt="FTO Initiative 1">
+                    <h3>Taxpayer Facilitation Initiative</h3>
+                    <p>This initiative aims to improve the taxpayer experience through streamlined processes, reducing the burden of tax compliance.</p>
+                    <a href="javascript:void(0);" onclick="toggleInfo('info1')">Read More</a>
+                    <div id="info1" class="more-info">
+                        <p>The Taxpayer Facilitation Initiative focuses on simplifying the filing process and providing dedicated support to taxpayers. It aims to enhance transparency and reduce compliance costs, making it easier for citizens to fulfill their tax obligations.</p>
+                    </div>
+                </div>
+
+                <!-- FTO Initiative 2 -->
+                <div class="card">
+                    <img src="images/pic211.png" alt="FTO Initiative 2">
+                    <h3>Public Awareness Campaign</h3>
+                    <p>FTO is working to increase public awareness about tax laws and rights to empower citizens and ensure better tax compliance.</p>
+                    <a href="javascript:void(0);" onclick="toggleInfo('info2')">Read More</a>
+                    <div id="info2" class="more-info">
+                        <p>The Public Awareness Campaign helps educate citizens on the importance of taxes and the role of tax revenues in national development. The campaign includes workshops, seminars, and media outreach to spread information on taxpayer rights and responsibilities.</p>
+                    </div>
+                </div>
+
+                <!-- FTO Initiative 3 -->
+                <div class="card">
+                    <img src="images/galery2.png" alt="FTO Initiative 3">
+                    <h3>Digital Tax Services</h3>
+                    <p>Enhancing the digital infrastructure to provide online services, making it easier for taxpayers to access services and file taxes electronically.</p>
+                    <a href="javascript:void(0);" onclick="toggleInfo('info3')">Read More</a>
+                    <div id="info3" class="more-info">
+                        <p>This initiative focuses on digitizing the tax services provided by FTO. With the adoption of online platforms, taxpayers can access services like online filing, inquiry submission, and status tracking, making the tax process more efficient and user-friendly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="special-reports">
+        <div class="container">
+            <h2>Special Reports</h2>
+            <div class="report-list">
+                <div class="report">
+                    <h3>
+                        NON-DISPOSAL OF PENDING AUCTION LOTS</h3>
+                    <p><strong>Published:</strong> Jan 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/non_disposal_of_pending_auction_lots.pdf">Download Report</a>
+                </div>
+                <div class="report">
+                    <h3>RETAILERS UNDER THE SALES TAX ACT 1990</h3>
+                    <p><strong>Published:</strong> Feb 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/report_on_retailers_under_the_sales_tax.pdf">Download Report</a>
+                </div>
+                <div class="report">
+                    <h3>BOGUS TAX REFUND</h3>
+                    <p><strong>Published:</strong> Mar 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/bogus_tax_refund.pdf">Download Report</a>
+                </div>
+                <div class="report">
+                    <h3>CLEARANCE OF PENDING AUCTIONABLE LOTS</h3>
+                    <p><strong>Published:</strong> Mar 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/211_om_2021_pressRelease.pdf">Download Report</a>
+                </div>
+                <div class="report"  style="display: block;">
+                    <h3>CLEARANCE OF PENDING AUCTIONABLE LOTS</h3>
+                    <p><strong>Published:</strong> Mar 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/Amnesty_Report_2013(17_02_2014).pdf">Report</a>
+                    <br>
+                    <a href="https://fto.gov.pk/assets/img/sr/Amnesty_Annexes.pdf">Annexes in PDF</a>
+                    <br>
+                    <a href="path/to/your/file.pdf" download>Annex-IX</a>
+                    <br>
+                    <a href="">Annex-XIX</a>
+                    <br>
+                    <a href="">Annex-XXI Missing Capacity</a>
+                    <br>
+                    <a href="">Annex-XXI - Missing Chasis</a>
+                    <br>
+                    <a href="">Annex-XXI - Missing CNIC</a>
+                    <br>
+                    <a href="">Annex-XXI - Missing Engine</a>
+                    <br>
+                    <a href="">Annex-XXII</a>
+
+                
+
+                </div>
+
+                <div class="report">
+                    <h3>ONE MAN INQUIRY COMMISSION</h3>
+                    <p><strong>Published:</strong> Mar 2024</p>
+                    <a href="https://fto.gov.pk/assets/img/sr/one_man_commission_third.pdf">Download Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FTO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleInfo(infoId) {
+            var infoDiv = document.getElementById(infoId);
+            if (infoDiv.style.display === "block") {
+                infoDiv.style.display = "none";
+            } else {
+                infoDiv.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

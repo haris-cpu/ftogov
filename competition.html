@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTO Short Video Competition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .view-details {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .view-details:hover {
+            text-decoration: underline;
+        }
+
+        .details-section {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .details-section h2 {
+            color: #007bff;
+        }
+
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+            overflow: hidden; /* To avoid image overflow when scaling */
+        }
+
+        .image-container img {
+            max-width: 100%;   /* Controls the width */
+            height: 400px;    /* Sets a fixed height for the image */
+            object-fit: cover; /* Ensures the image maintains its aspect ratio */
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
+        }
+
+        .image-container img:hover {
+            transform: scale(2); /* Scale the image when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FTO Short Video Competition</h1>
+        <p>Details of FTO Short Video Competition <a href="https://fto.gov.pk/uploads/DetailsofFTOShortVideoCompetition.pdf" target="_blank" class="view-details">View Details</a></p>
+        <p>Submission process for FTO Short Video Competition <a href="https://fto.gov.pk/uploads/Submissionprocess.pdf" target="_blank" class="view-details">View Details</a></p>
+    </div>
+
+    <!-- Image container placed below the main content -->
+    <div class="image-container">
+        <img src="FTOShortVideoCompetition.jpeg" alt="FTO Short Video Competition">
+    </div>
+
+    <script>
+        // Smooth scroll effect when clicking the anchor link (though no longer needed since PDFs open in a new tab)
+        document.querySelectorAll('.view-details').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Prevent default action (no longer needed here)
+                // e.preventDefault();
+                
+                // Open PDF in new tab
+                window.open(this.getAttribute('href'), '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

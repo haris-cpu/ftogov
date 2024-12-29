@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTO Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #006bb3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .event {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .event-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .event-info {
+            padding: 15px;
+        }
+
+        .event-info h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .event-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .event:hover {
+            transform: translateY(-10px);
+        }
+
+        .event:hover .event-img {
+            transform: scale(1.05);
+        }
+
+        .event img {
+            transition: all 0.3s ease;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        #scrollToTop:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .events {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>FTO Events</h1>
+    </div>
+</header>
+
+<section class="events">
+    <!-- Event 1: Visit to Multan Tax Bar Association -->
+    <div class="event">
+        <img src="eventImags/MLN_TB_1.jpg" alt="Visit to Multan Tax Bar Association" class="event-img">
+        <div class="event-info">
+            <h2>Visit to Multan Tax Bar Association</h2>
+            <p>Date: February 28, 2022</p>
+            <p>Details: A visit to the Multan Tax Bar Association was organized to engage with legal professionals and discuss tax matters affecting the local businesses and taxpayers. The purpose was to create awareness regarding the role and function of the FTO.</p>
+        </div>
+    </div>
+
+    <!-- Event 2: Visit to Multan Regional Office -->
+    <div class="event">
+        <img src="eventImags/RO_MLN_1.jpg" alt="Visit to Multan Regional Office" class="event-img">
+        <div class="event-info">
+            <h2>Visit to Multan Regional Office</h2>
+            <p>Date: February 28, 2022</p>
+            <p>Details: The visit focused on discussing the operational challenges faced by the regional office and strengthening the communication between the FTO and the local taxpayers.</p>
+        </div>
+    </div>
+
+    <!-- Event 3: Awareness Seminar About Role & Function of FTO -->
+    <div class="event">
+        <img src="eventImags/RO_LHR_2.jpg" alt="Awareness Seminar About Role & Function of FTO" class="event-img">
+        <div class="event-info">
+            <h2>AWARENESS SEMINAR ABOUT ROLE & FUNCTION OF FTO</h2>
+            <p>Date: March 18, 2022</p>
+            <p>Details: A seminar was held to educate the stakeholders about the role and functions of the FTO, its impact on the tax system, and how it can resolve disputes between taxpayers and tax authorities.</p>
+        </div>
+    </div>
+
+    <!-- Event 4: Awareness Seminar at President House, Islamabad -->
+    <div class="event">
+        <img src="eventImags/HQ_PRESIDENT_6.jpg" alt="Awareness Seminar at President House, Islamabad" class="event-img">
+        <div class="event-info">
+            <h2>AWARENESS SEMINAR AT PRESIDENT HOUSE, ISLAMABAD</h2>
+            <p>Date: March 21, 2022</p>
+            <p>Details: A high-level awareness seminar held at the President House, Islamabad, focused on increasing the awareness of the public regarding the Federal Tax Ombudsman’s services and its role in resolving tax-related issues.</p>
+        </div>
+    </div>
+
+    <!-- Event 5: Visit - Jhelum Tax Bar & Business Association -->
+    <div class="event">
+        <img src="eventImags/JHLM_TAXBAR_2.jpg" alt="Visit - Jhelum Tax Bar & Business Association" class="event-img">
+        <div class="event-info">
+            <h2>VISIT - JHELUM TAX BAR & BUSINESS ASSOCIATION</h2>
+            <p>Date: March 18, 2022</p>
+            <p>Details: FTO representatives visited the Jhelum Tax Bar and Business Association to discuss issues related to the tax system and to offer solutions for better collaboration between tax professionals and the FTO.</p>
+        </div>
+    </div>
+
+    <!-- Event 6: Visit - Gujranwala Chamber of Commerce -->
+    <div class="event">
+        <img src="eventImags/GWL_CHAMBER_3.jpg" alt="Visit - Gujranwala Chamber of Commerce" class="event-img">
+        <div class="event-info">
+            <h2>VISIT - GUJRANWALA CHAMBER OF COMMERCE</h2>
+            <p>Date: March 21, 2022</p>
+            <p>Details: This visit aimed to strengthen the relationship between the FTO and the Gujranwala Chamber of Commerce, focusing on resolving business-related tax complaints and improving tax administration.</p>
+        </div>
+    </div>
+
+    <!-- Event 7: Awareness Session for Office Bearers of Pakistan Tea Association -->
+    <div class="event">
+        <img src="eventImags/KHI_TAP_1.jpg" alt="Awareness Session for Office Bearers of Pakistan Tea Association" class="event-img">
+        <div class="event-info">
+            <h2>AWARENESS SESSION FOR OFFICE BEARERS OF PAKISTAN TEA ASSOCIATION</h2>
+            <p>Date: March 23, 2022</p>
+            <p>Details: The session focused on educating the office bearers of the Pakistan Tea Association about the FTO’s role and how it can assist in resolving tax-related issues in the tea industry.</p>
+        </div>
+    </div>
+
+    <!-- Event 8: Seminar on Role of Tax Ombudsman in Pakistan -->
+    <div class="event">
+        <img src="eventImags/ISB_ICAP_4.jpg" alt="Seminar on Role of Tax Ombudsman in Pakistan" class="event-img">
+        <div class="event-info">
+            <h2>SEMINAR ON ROLE OF TAX OMBUDSMAN IN PAKISTAN</h2>
+            <p>Date: March 29, 2022</p>
+            <p>Details: A comprehensive seminar was held to explain the role of the Tax Ombudsman and its importance in enhancing transparency and fairness in the tax system.</p>
+        </div>
+    </div>
+
+    <!-- Event 9: OIC Ombudsman Association (OICOA) - Morocco -->
+    <div class="event">
+        <img src="eventImags/MOROCCO_5.jpg" alt="OIC Ombudsman Association (OICOA) - Morocco" class="event-img">
+        <div class="event-info">
+            <h2>OIC OMBUDSMAN ASSOCIATION (OICOA) - MOROCCO</h2>
+            <p>Date: March 29, 2022</p>
+            <p>Details: FTO participated in the OIC Ombudsman Association conference in Morocco, discussing international cooperation in tax matters and exploring ways to enhance mutual support among member countries.</p>
+        </div>
+    </div>
+
+    <!-- Event 10: Iftar Dinner - FTO Office Islamabad -->
+    <div class="event">
+        <img src="eventImags/iftar_sgd_2.jpg" alt="Iftar Dinner - FTO Office Islamabad" class="event-img">
+        <div class="event-info">
+            <h2>IFTAR DINNER - FTO OFFICE ISLAMABAD</h2>
+            <p>Date: April 13, 2022</p>
+            <p>Details: An Iftar dinner was organized at the FTO Office in Islamabad to foster a sense of community among staff and stakeholders during the holy month of Ramadan.</p>
+        </div>
+    </div>
+
+    <!-- Event 11: Visit to Punjab University, Lahore -->
+    <div class="event">
+        <img src="eventImags/pu_lhr_1.jpg" alt="Visit to Punjab University, Lahore" class="event-img">
+        <div class="event-info">
+            <h2>VISIT TO PUNJAB UNIVERSITY, LAHORE</h2>
+            <p>Date: April 25, 2022</p>
+            <p>Details: The visit aimed to raise awareness about the FTO’s role among students and faculty, encouraging young minds to engage with the tax system and the FTO's services.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Scroll to Top Button functionality
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            document.getElementById("scrollToTop").style.display = "block";
+        } else {
+            document.getElementById("scrollToTop").style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Smooth scroll effect for anchor links
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>
